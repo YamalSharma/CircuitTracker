@@ -1,6 +1,7 @@
 # 🏋️ Circuit Tracker - HIIT & Workout Timer Web App
 
 **Circuit Tracker** is a customizable web-based workout timer designed to help users create, edit, import, and track high-intensity interval training (HIIT) circuits or custom routines. Built for both personal use and fitness trainers, the app makes it easy to manage timed workouts with preparation, exercise, and rest intervals — with full control over exercise sets and repetitions.
+Live Demo: https://circuittracker.netlify.app/
 ## 🚀 Features
 
 - ✅ Create and save custom workout circuits with multiple sets and exercises
