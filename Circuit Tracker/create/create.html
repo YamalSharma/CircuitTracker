@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create New Circuit</title>
+  <link rel="stylesheet" href="create.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <h1>Create New Circuit</h1>
+
+    <div class="form-group">
+      <label for="circuit-name">Circuit Name:</label>
+      <input type="text" id="circuit-name" placeholder="Enter circuit name">
+    </div>
+
+    <div id="sets-container"></div>
+
+    <div class="buttons">
+      <button class="add-btn" onclick="addSet()">➕ Add Set</button>
+      <button class="save-btn" onclick="saveCircuit()">💾 Save Circuit</button>
+    </div>
+  </div>
+
+  <script src="create.js"></script>
+</body>
+</html>

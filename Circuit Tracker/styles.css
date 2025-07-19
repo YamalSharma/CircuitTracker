@@ -1,0 +1,275 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+  --bg-color: #f0f2f5;
+  --text-color: #333;
+  --card-bg: white;
+  --fab-bg: #007bff;
+  --menu-bg: white;
+  --menu-hover: #eee;
+  --delete-icon-color: red;
+}
+
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --card-bg: #1e1e1e;
+  --fab-bg: #0a84ff;
+  --menu-bg: #1e1e1e;
+  --menu-hover: #333;
+  --delete-icon-color: #ff4d4d;
+}
+
+#loading-screen {
+  text-align: center;
+  background-color: #222;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.loading-bar {
+  position: relative;
+  width: 80vw;
+  height: 30px;
+  background: #444;
+  margin: 30px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.runner {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-image: url('Extra/giphy.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: runAcross 3s linear forwards;
+  z-index: 5;
+}
+
+.progress-ray {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, #00f, #0ff);
+  opacity: 0.6;
+  border-radius: 10px;
+  animation: fillRay 3s linear forwards;
+  z-index: 1;
+}
+
+@keyframes fillRay {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes runAcross {
+  from { left: 0; }
+  to { left: calc(100% - 30px); }
+}
+
+#main-dashboard {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: none;
+  text-align: center;
+}
+
+.top-bar {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1em 1.5em;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  color: white;
+  z-index: 1000;
+}
+
+.menu-button {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 3em;
+  right: 0;
+  background: var(--menu-bg);
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.menu-dropdown button {
+  display: block;
+  padding: 0.5em 1em;
+  border: none;
+  background: var(--menu-bg);
+  width: 100%;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.menu-dropdown button:hover {
+  background-color: var(--menu-hover);
+}
+
+.circuit-content {
+  padding: 100px 20px 20px 20px;
+  display: block;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.fab-container {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+}
+
+.fab-button {
+  background-color: var(--fab-bg);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 2em;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.fab-menu {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background: var(--menu-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(160, 160, 160, 0.2);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.fab-divider {
+  margin: 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.fab-menu button {
+  display: block;
+  width: 100%;
+  padding: 0.75em;
+  border: none;
+  background: var(--menu-bg);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.fab-menu button:hover {
+  background: var(--menu-hover);
+}
+
+@media (max-width: 500px) {
+  .top-bar h2 {
+    font-size: 1.2rem;
+  }
+
+  .fab-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+  }
+}
+
+.circuit-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 15px 20px;
+  margin: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.circuit-card:hover {
+  background: var(--menu-hover);
+}
+
+.circuit-name {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.delete-icon {
+  color: var(--delete-icon-color);
+  font-size: 1.2rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .top-bar h2 {
+    font-size: 1rem;
+  }
+
+  .circuit-card {
+    font-size: 1rem;
+    padding: 12px;
+    margin: 8px 10px;
+  }
+
+  .fab-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .menu-button {
+    font-size: 1.2rem;
+  }
+
+  .fab-menu button {
+    font-size: 0.9rem;
+  }
+}
+
+.import-json-label button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--text-color);
+}

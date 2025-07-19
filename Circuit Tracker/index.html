@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading Screen</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="loading-bar">
+      <div class="progress-ray"></div>
+      <div class="runner"></div>
+    </div>
+    <p>Loading Circuit Tracker...</p>
+  </div>
+
+  <div id="main-dashboard" style="display: none;">
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <h2>Your Circuits</h2>
+      <div class="menu-button" onclick="toggleMenu()">
+        &#x22EE;
+        <div id="menu-dropdown" class="menu-dropdown">
+          <button onclick="exitApp()">Exit</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="circuit-content">
+      <p>No circuits created yet.</p>
+    </div>
+
+    <!-- Floating Add Button -->
+    <div class="fab-container">
+      <button class="fab-button" onclick="toggleFabMenu()">+</button>
+      <div id="fab-menu" class="fab-menu">
+        <a href="create/create.html"><button>Create New</button></a>
+        <hr class="fab-divider">
+        <label for="import-json" class="import-json-label">
+          📥 Import JSON
+        </label>
+        <input type="file" id="import-json" accept=".json" style="display: none;">
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
